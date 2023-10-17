@@ -18,7 +18,7 @@ markdown file.
 
 ### Answer
 
-The implementation used here uses two main loops.  The outer one iterates over the subarray size, and the inner loop iterates over the array jumping by double the subarray size.  The inner while loops might seem like they would cause a larger increase, but the actual merging process should only take linear time for the subarrays.  This many loops seems like it should increase time complexity by a great deal, but because the subarray size doubles with each iteration of the outer loop, the time complexity should only be $\Theta(nlogn)$
+The implementation used here uses two main loops.  The outer one iterates over the subarray size, and the inner loop iterates over the array jumping by double the subarray size.  The outer loop should iterate $log(n)$ times as the index doubles with each iteration.  The inner loop should iterate an overall linear number of times due to $j$ incrementing by $i*2$ with each iteration.  The innermost for loop adds an extra linear term to the inner loop, but that shouldn't change the actual complexity.  This many loops seems like it should increase time complexity by a great deal, but with this logic the time complexity should only be $\Theta(nlog(n))$
 
 ## Sources:
 
