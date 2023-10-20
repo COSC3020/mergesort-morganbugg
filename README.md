@@ -18,7 +18,7 @@ markdown file.
 
 ### Answer
 
-The implementation used here uses two main loops.  The outer one iterates over the subarray size, and the inner loop iterates over the array jumping by double the subarray size.  The outer loop should iterate $log(n)$ times as the index doubles with each iteration.  The inner loop should iterate an overall linear number of times due to $j$ incrementing by $i*2$ with each iteration.  The innermost for loop adds an extra linear term to the inner loop, but that shouldn't change the actual complexity.  This many loops seems like it should increase time complexity by a great deal, but with this logic the time complexity should only be $\Theta(nlog(n))$
+The implementation used here uses two main loops.  The outer one iterates over the subarray size, and the inner loop iterates over the array jumping by double the subarray size.  The outer loop should iterate $log(n)$ times as the index doubles with each iteration.  The merge step in this implementation is more time consuming than a standard merge sort, as for each element of the left subarray, it swaps and shifts up to the total elements in the right subarray.  This means that the merge step takes $n^2$, giving a final total time complexity of $\Theta(n^2log(n))$
 
 ## Sources:
 
